@@ -131,15 +131,17 @@ const JobListMain = () => {
         </div>
         <ul className="recruitment_list">
           {dataForRecruitment.companies.map((company) => (
-            <RecruitCompanyContent
-              imgSrc={company.imgSrc}
-              recruitTitle={company.recruitTitle}
-              companyName={company.companyName}
-              responseRate={company.responseRate}
-              region={company.region}
-              pay={company.pay}
-              key={company.id}
-            />
+            <Link to={`/joblist/${company.id}`} key={company.id}>
+              <RecruitCompanyContent
+                imgSrc={company.imgSrc}
+                recruitTitle={company.recruitTitle}
+                companyName={company.companyName}
+                responseRate={company.responseRate}
+                region={company.region}
+                pay={company.pay}
+                key={company.id}
+              />
+            </Link>
           ))}
         </ul>
       </div>

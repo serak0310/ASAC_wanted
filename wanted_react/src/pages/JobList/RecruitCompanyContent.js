@@ -11,7 +11,6 @@ const RecruitCompanyContent = ({
 }) => {
   return (
     <li className="recruitment_content">
-      <a href="">
         <div className="content_header">
           <img src={imgSrc} alt="" className="recruitment_image" />
           <button className="recruitment_bookmark"><Bookmark_ic /></button>
@@ -23,7 +22,6 @@ const RecruitCompanyContent = ({
           <div className="recruitment_region">{region}</div>
           <div className="recruitment_pay">{pay}</div>
         </div>
-      </a>
     </li>
   );
 };
