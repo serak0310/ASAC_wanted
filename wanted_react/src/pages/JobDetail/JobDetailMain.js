@@ -10,7 +10,7 @@ import '../../assets/img/map.png';
 import JobDetailTechStack from './JobDetailTechStack';
 import JobDetailSlider from './JobDetailSlider';
 
-const JobDetailMain = () => {
+const JobDetailMain = ({pageId}) => {
   return (
     <main>
       <div className="main_wrapper">

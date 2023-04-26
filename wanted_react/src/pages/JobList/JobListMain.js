@@ -6,6 +6,7 @@ import { ReactComponent as ArrowRight_ic } from "../../assets/svg/ic_arrow_right
 import JobListCategory from "./JobListCategory";
 import RecruitCompanyContent from "./RecruitCompanyContent";
 import dataForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
+import { Link } from "react-router-dom";
 
 const JobListMain = () => {
   return (
@@ -106,15 +107,17 @@ const JobListMain = () => {
       <div className="grid_section">
         <ul className="recruitment_list">
           {dataForRecruitment.companies.map((company) => (
-            <RecruitCompanyContent
-              imgSrc={company.imgSrc}
-              recruitTitle={company.recruitTitle}
-              companyName={company.companyName}
-              responseRate={company.responseRate}
-              region={company.region}
-              pay={company.pay}
-              key={company.id}
-            />
+            <Link to={`/joblist/${company.id}`} key={company.id}>
+              <RecruitCompanyContent
+                imgSrc={company.imgSrc}
+                recruitTitle={company.recruitTitle}
+                companyName={company.companyName}
+                responseRate={company.responseRate}
+                region={company.region}
+                pay={company.pay}
+                key={company.id}
+              />
+            </Link>
           ))}
         </ul>
         <div className="typetest_banner">
@@ -127,7 +130,7 @@ const JobListMain = () => {
           </div>
         </div>
         <ul className="recruitment_list">
-        {dataForRecruitment.companies.map((company) => (
+          {dataForRecruitment.companies.map((company) => (
             <RecruitCompanyContent
               imgSrc={company.imgSrc}
               recruitTitle={company.recruitTitle}
