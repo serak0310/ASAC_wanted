@@ -50,7 +50,7 @@ header {
     align-items: center;
 }
 
-.main_menu li a {
+.main_menu li span {
     padding: 15px;
     font-weight: 600;
     font-size: small;
