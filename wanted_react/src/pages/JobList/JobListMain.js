@@ -1,10 +1,11 @@
-import React from 'react';
-import '../../styles/style.css';
-import { ReactComponent as Bookmark_ic } from '../../assets/svg/ic_bookmark.svg';
-import { ReactComponent as BookmarkFill_ic } from '../../assets/svg/ic_bookmark_fill.svg';
-import { ReactComponent as ArrowRight_ic } from '../../assets/svg/ic_arrow_right.svg';
-import JobListCategory from './JobListCategory';
-import RecruitCompanyContent from './RecruitCompanyContent';
+import React from "react";
+import "../../styles/style.css";
+import { ReactComponent as Bookmark_ic } from "../../assets/svg/ic_bookmark.svg";
+import { ReactComponent as BookmarkFill_ic } from "../../assets/svg/ic_bookmark_fill.svg";
+import { ReactComponent as ArrowRight_ic } from "../../assets/svg/ic_arrow_right.svg";
+import JobListCategory from "./JobListCategory";
+import RecruitCompanyContent from "./RecruitCompanyContent";
+import dataForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
 
 const JobListMain = () => {
   return (
@@ -104,81 +105,39 @@ const JobListMain = () => {
       </div>
       <div className="grid_section">
         <ul className="recruitment_list">
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__1080_790.jpg&w=1000&q=75"
-            recruitTitle="웹 프론트엔드 개발자(React)"
-            companyName="블루비커"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F16196%2F3kcdxtkdyessl9mj__400_400.jpg&w=400&q=75"
-            recruitTitle="클라이언트 개발자(React Native, iOS, Android"
-            companyName="아이디아이디"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F131%2Fzlnythvhfobleo2g__400_400.jpg&w=400&q=75"
-            recruitTitle="Site Engineer"
-            companyName="스켈터랩스"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F31860%2F3rr16ziwfg9ktwnv__400_400.jpg&w=400&q=75"
-            recruitTitle="서버/응용소프트웨어 개발자"
-            companyName="에이아이리더"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
+          {dataForRecruitment.companies.map((company) => (
+            <RecruitCompanyContent
+              imgSrc={company.imgSrc}
+              recruitTitle={company.recruitTitle}
+              companyName={company.companyName}
+              responseRate={company.responseRate}
+              region={company.region}
+              pay={company.pay}
+              key={company.id}
+            />
+          ))}
         </ul>
         <div className="typetest_banner">
           <div className="banner_wrap">
             <div>내 유형과 가장 잘 어울리는 회사는?</div>
             <div className="gotxt_wrap">
               유형테스트 하러가기
-              <ArrowRight_ic/>
+              <ArrowRight_ic />
             </div>
           </div>
         </div>
         <ul className="recruitment_list">
-        <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__1080_790.jpg&w=1000&q=75"
-            recruitTitle="웹 프론트엔드 개발자(React)"
-            companyName="블루비커"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F16196%2F3kcdxtkdyessl9mj__400_400.jpg&w=400&q=75"
-            recruitTitle="클라이언트 개발자(React Native, iOS, Android"
-            companyName="아이디아이디"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F131%2Fzlnythvhfobleo2g__400_400.jpg&w=400&q=75"
-            recruitTitle="Site Engineer"
-            companyName="스켈터랩스"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
-          <RecruitCompanyContent
-            imgSrc="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F31860%2F3rr16ziwfg9ktwnv__400_400.jpg&w=400&q=75"
-            recruitTitle="서버/응용소프트웨어 개발자"
-            companyName="에이아이리더"
-            responseRate="응답률 매우 높음"
-            region="서울·한국"
-            pay="채용보상금 1,000,000원"
-          />
+        {dataForRecruitment.companies.map((company) => (
+            <RecruitCompanyContent
+              imgSrc={company.imgSrc}
+              recruitTitle={company.recruitTitle}
+              companyName={company.companyName}
+              responseRate={company.responseRate}
+              region={company.region}
+              pay={company.pay}
+              key={company.id}
+            />
+          ))}
         </ul>
       </div>
     </main>
