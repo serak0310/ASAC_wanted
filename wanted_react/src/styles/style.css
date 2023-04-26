@@ -1,0 +1,70 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/meyer-reset/2.0/reset.min.css");
+@import "header.css";
+@import "footer.css";
+@import "page_home.css";
+@import "page_joblist.css";
+@import "page_jobdetail.css";
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+button {
+    font-family: inherit;
+    color: inherit;
+    background: none;
+    border: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    font-family: Noto Sans KR, Pretendard, Pretendard JP, Pretendard Std, -apple-system, system-ui, BlinkMacSystemFont,
+        Roboto, Segoe UI, Helvetica, Arial, Apple SD Gothic Neo, Nanum Gothic, Malgun Gothic, Apple Color Emoji,
+        Segoe UI Emoji, Segoe UI Symbol, sans-serif;
+    width: 100%;
+    height: 100vh;
+    /*스크롤뷰 안보이게*/
+    -ms-overflow-style: none;
+    overflow: auto;
+}
+
+::-webkit-scrollbar {
+    /*스크롤뷰 안보이게*/
+    display: none;
+}
+
+#root {
+    width: 100%;
+    height: 100vh;
+}
+
+.root {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*fff*/
+    width: 100%;
+}
+
+/* main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+} */
+
+.spinner {
+    position: fixed;
+    display: block;
+    top: 50%;
+    left: 48.5%;
+    animation: spin 2s linear infinite;
+}
+
+.hidden {
+    display: none;
+}

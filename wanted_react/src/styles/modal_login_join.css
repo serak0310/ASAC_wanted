@@ -1,0 +1,508 @@
+.modal_black {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    font-family: inherit;
+}
+
+.login_modal_content {
+    z-index: 10;
+    background-color: #fff;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: 1px solid #8a8a8a;
+    width: 25%;
+    height: 90%;
+    min-width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* 수평 수직으로 중앙에 위치 */
+    overflow-y: auto;
+    /*모달 스크롤*/
+    box-sizing: border-box;
+}
+
+.join_modal_content {
+    z-index: 10;
+    background-color: #fff;
+    padding: 0px 20px;
+    border-radius: 5px;
+    border: 1px solid #8a8a8a;
+    width: 25%;
+    height: 90%;
+    min-width: 320px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    /* 수평 수직으로 중앙에 위치 */
+    box-sizing: border-box;
+}
+
+.loginmodal_title {
+    display: flex;
+    flex-direction: column;
+}
+
+.loginmodal_title svg {
+    margin: 0 auto;
+    margin-bottom: 30px;
+    padding-top: 90px;
+    width: 93px;
+    height: 28px;
+}
+
+.loginmodal_title h1 {
+    text-align: center;
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin: 0px auto 16px;
+}
+
+.loginmodal_title h2 {
+    text-align: center;
+    font-size: 0.9rem;
+    font-weight: 400;
+    line-height: normal;
+    color: rgb(136, 136, 136);
+    margin-bottom: 45px;
+}
+
+#login_form {
+    width: 100%;
+    height: 100%;
+    margin: 0 auto;
+}
+
+label[for="userEmail"] {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: rgb(136, 136, 136)
+}
+
+#userEmail {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    padding: 0px 12px;
+    background-color: transparent;
+    outline: none;
+    border: 1px solid rgb(225, 226, 227);
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 8px auto;
+    box-sizing: border-box;
+}
+
+#userEmail:focus {
+    border: 1px solid #36f;
+}
+
+#userEmail::placeholder {
+    color: #ccc;
+}
+
+.emailNotValid_txt {
+    display: none;
+    color: #fe415c;
+    font-size: 13px;
+    font-weight: 00;
+    margin-bottom: 8px;
+}
+
+.continue_btn {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* background-color: #36f;  */
+    /* color: #fff; */
+    background-color: #f2f4f7;
+    color: #ccc;
+    border: none;
+    margin-top: 10px;
+    font-weight: 500;
+}
+
+#login_form>p {
+    font-size: 12px;
+    font-weight: 600;
+    line-height: 16px;
+    color: #939393;
+    text-align: center;
+    margin-top: 5px;
+    margin-bottom: 15px;
+}
+
+.socialLogin_btns {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.socialLogin_btns svg {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    border: 1px solid;
+    color: #e1e2e3;
+}
+
+.socialLogin_btns p {
+    font-size: 11px;
+    font-weight: 500;
+    color: #888;
+    margin-top: 8px;
+    margin-bottom: 0;
+    text-align: center;
+}
+
+.findacount_btn {
+    color: #767676;
+    font-size: 14px;
+    font-weight: 500;
+    width: 100%;
+    margin-top: 40px;
+}
+
+#login_form hr {
+    border: none;
+    width: 100%;
+    border-bottom: 1px solid #e1e2e3;
+    margin-top: 30px;
+    margin-bottom: 30px;
+}
+
+.TOS {
+    margin: 30px auto 15px auto;
+    width: 100%;
+    text-align: center;
+    color: #767676;
+    font-size: 13px;
+    font-weight: 500;
+}
+
+.TOS a:nth-child(2) {
+    margin-left: 7px;
+    font-weight: 600;
+}
+
+.companyname_txt {
+    margin: 30px auto 30px auto;
+    width: 100%;
+    text-align: center;
+    color: #767676;
+    font-size: 13px;
+    font-weight: 300;
+}
+
+.language_select {
+    width: 35%;
+    margin: 0 auto;
+    height: 34px;
+    min-height: 34px;
+    border-radius: 5px;
+    border: 1px solid #e1e2e3;
+
+    position: relative;
+}
+
+.language_select img {
+    position: absolute;
+    top: 8px;
+    left: 15px;
+    width: 23px;
+    height: 16px;
+    border-radius: 2px;
+    z-index: 3;
+    border: 1px solid #e1e2e3;
+}
+
+.language_select select {
+    padding-left: 40px;
+    width: 100%;
+    height: 100%;
+    font-size: 13px;
+    font-weight: 600;
+    border: none;
+    border-radius: 4px;
+}
+
+/*-------------------------------- 회원가입 모달 --------------------------------*/
+.joinmodal_wrapper {
+    width: 100%;
+    flex-direction: column;
+    height: 100%;
+    position: relative;
+    display: flex;
+}
+
+.modal_header {
+    height: 64px;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+    background-color: #fff;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.modal_header div:nth-child(1) {
+    height: 100%;
+    min-width: 64px;
+    display: flex;
+    justify-content: flex-start;
+}
+
+.backToLogin_btn {
+    font-weight: 400;
+    font-size: 17px;
+    color: #000;
+}
+
+.modal_header div:nth-child(2) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    font-size: 18px;
+    font-weight: 500;
+    color: #000;
+}
+
+.modal_header div:nth-child(3) {
+    width: 64px;
+    height: 100%;
+    min-width: 64px;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+.modal_body {
+    width: 100%;
+    height: 90%;
+    position: absolute;
+    padding-top: 490px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    box-sizing: border-box;
+    overflow-y: auto;
+    /*모달 스크롤*/
+}
+
+.formcontent_title {
+    margin: 20px 0px 7px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #888;
+}
+
+.formcontent_wrapper input {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    padding: 0px 12px;
+    outline: none;
+    border: 1px solid #e1e2e3;
+    border-radius: 5px;
+    font-size: 15px;
+    font-weight: 500;
+    margin-bottom: 8px;
+    color: #333;
+    box-sizing: border-box;
+}
+
+.formcontent_wrapper input::placeholder {
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+}
+
+.userEmail_tf {
+    color: #ccc;
+}
+
+.phoneRegion_select {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    padding: 0px 12px;
+    border: 1px solid #e1e2e3;
+    border-radius: 5px;
+    margin-bottom: 8px;
+    box-sizing: border-box;
+}
+
+.phoneRegion_select>select {
+    width: 100%;
+    height: 100%;
+    border: none;
+    color: #333;
+    font-size: 15px;
+    font-weight: 500;
+
+}
+
+.phoneCheck_wrapper {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.phoneCheck_wrapper .phoneNumCheck_btn {
+    min-width: 110px;
+    height: 50px;
+    padding: 0px 8px;
+    margin-bottom: 8px;
+    margin-left: 8px;
+    color: #ccc;
+    font-size: 15px;
+    font-weight: 500;
+    border: 1px solid #f2f4f7;
+    border-radius: 5px;
+    background-color: #f2f4f7;
+}
+
+.formcontent_wrapper>p {
+    color: #888;
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 18px;
+    margin-bottom: 8px;
+}
+
+.checkbox_wrapper {
+    width: 100%;
+    height: 27px;
+    min-height: 27px;
+    margin: 0px;
+    padding: 3px 0px;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.first_checkbox_wrapper {
+    margin-top: 20px;
+}
+
+.checkbox_wrapper .agree {
+    width: 18px;
+    height: 18px;
+    font-size: 11px;
+    margin: 0px;
+    padding: 0px;
+    border-radius: 3px;
+    border: 1px solid #ececec !important;
+    outline: none !important;
+}
+
+.checkbox_text {
+    margin-left: 5px;
+    font-size: 14px;
+    font-weight: 400;
+    color: #888;
+    flex: 1 1 auto;
+}
+
+.checkbox_wholetitle {
+    font-size: 15px;
+    font-weight: 500;
+    color: #333;
+}
+
+#join_form hr {
+    border: 1px solid #e1e2e3;
+}
+
+.checkbox_wrapper a {
+    text-align: left;
+    font-size: 15px;
+    font-weight: 500;
+    color: #888;
+}
+
+.snsagree_content {
+    width: 100%;
+    margin: 20px 0px 30px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.checkSNS_wrapper {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    font-size: 15px;
+    font-weight: 400;
+    color: #888;
+}
+
+/* 기본 체크박스 숨기기 */
+.checkSNS_wrapper .snscheck {
+    display: none;
+}
+
+.checkSNS_wrapper svg {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    fill: #888;
+}
+
+.submit_content {
+    height: 64px;
+    width: 100%;
+    position: absolute;
+    bottom: 30px;
+    z-index: 1;
+    background-color: #fff;
+    display: flex;
+    box-sizing: border-box;
+}
+
+.join_btn {
+    width: 100%;
+    height: 50px;
+    min-height: 50px;
+    border-radius: 25px;
+    font-size: 16px;
+    margin-bottom: 10px;
+    /* background-color: #36f;  */
+    /* color: #fff; */
+    background-color: #f2f4f7;
+    color: #ccc;
+    border: none;
+    margin-top: 10px;
+    font-weight: 500;
+}
