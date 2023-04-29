@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "../../styles/style.css";
 import { ReactComponent as ArrowBold_ic } from "../../assets/svg/ic_arrow_bold.svg";
 import { ReactComponent as ArrowDown_ic } from "../../assets/svg/ic_arrow_down.svg";
@@ -10,6 +10,7 @@ import "../../assets/img/map.png";
 import JobDetailTechStack from "./JobDetailTechStack";
 import JobDetailSlider from "./JobDetailSlider";
 import dummyForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
+import KakaoMap from "./KakaoMap";
 
 const JobDetailMain = ({ pageId }) => {
   const company = dummyForRecruitment.companies.filter((company) => company.id === pageId)[0];
@@ -276,9 +277,10 @@ const JobDetailMain = ({ pageId }) => {
                 <span className="datemap_body">{company.detailLocation}</span>
               </div>
               <div>
-                <a href="https://map.naver.com/v5/?c=17,0,0,0,dh&lng=126.9729133&lat=37.5511247&type=0&title=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20366%20%ED%8A%B8%EC%9C%88%EC%8B%9C%ED%8B%B0%20%EB%82%A8%EC%82%B0">
+                <KakaoMap lat={company.lat} lng={company.lng} />
+                {/* <a href="https://map.naver.com/v5/?c=17,0,0,0,dh&lng=126.9729133&lat=37.5511247&type=0&title=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20366%20%ED%8A%B8%EC%9C%88%EC%8B%9C%ED%8B%B0%20%EB%82%A8%EC%82%B0">
                   <img src={company.mapImage} alt="네이버지도" />
-                </a>
+                </a> */}
               </div>
             </div>
             <div className="bottom_banner_section">
