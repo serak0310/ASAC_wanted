@@ -1,16 +1,19 @@
-import React, { useState } from 'react';
-import '../../styles/style.css';
-import { ReactComponent as ArrowBold_ic } from '../../assets/svg/ic_arrow_bold.svg';
-import { ReactComponent as ArrowDown_ic } from '../../assets/svg/ic_arrow_down.svg';
-import { ReactComponent as Warning_ic } from '../../assets/svg/ic_warning.svg';
-import { ReactComponent as Share_ic } from '../../assets/svg/ic_share.svg';
-import { ReactComponent as Heart_ic } from '../../assets/svg/ic_heart.svg';
-import { ReactComponent as Bookmark_blue_ic } from '../../assets/svg/ic_bokmark_blue.svg';
-import '../../assets/img/map.png';
-import JobDetailTechStack from './JobDetailTechStack';
-import JobDetailSlider from './JobDetailSlider';
+import React, { useState } from "react";
+import "../../styles/style.css";
+import { ReactComponent as ArrowBold_ic } from "../../assets/svg/ic_arrow_bold.svg";
+import { ReactComponent as ArrowDown_ic } from "../../assets/svg/ic_arrow_down.svg";
+import { ReactComponent as Warning_ic } from "../../assets/svg/ic_warning.svg";
+import { ReactComponent as Share_ic } from "../../assets/svg/ic_share.svg";
+import { ReactComponent as Heart_ic } from "../../assets/svg/ic_heart.svg";
+import { ReactComponent as Bookmark_blue_ic } from "../../assets/svg/ic_bokmark_blue.svg";
+import "../../assets/img/map.png";
+import JobDetailTechStack from "./JobDetailTechStack";
+import JobDetailSlider from "./JobDetailSlider";
+import dummyForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
 
-const JobDetailMain = ({pageId}) => {
+const JobDetailMain = ({ pageId }) => {
+  const company = dummyForRecruitment.companies.filter((company) => company.id === pageId)[0];
+
   return (
     <main>
       <div className="main_wrapper">
@@ -24,15 +27,15 @@ const JobDetailMain = ({pageId}) => {
                 <ArrowBold_ic width="24" height="24" />
               </div>
               <div className="jobdetail_slide_list">
-                <JobDetailSlider/>
+                <JobDetailSlider />
               </div>
             </div>
             <div className="main_inform_section">
-              <h2 className="main_inform_title">웹 프론트엔드 개발자(React)</h2>
+              <h2 className="main_inform_title">{company.recruitTitle}</h2>
               <div className="main_inform_middle">
-                <h6 className="name">블루비커</h6>
-                <div className="feedback_rate">응답률 매우 높음</div>
-                <div className="region">서울·한국</div>
+                <h6 className="name">{company.companyName}</h6>
+                <div className="feedback_rate">{company.responseRate}</div>
+                <div className="region">{company.region}</div>
               </div>
               <ul className="main_inform_tags">
                 <li className="inform_tag_item">#인원급성장</li>
@@ -58,25 +61,21 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 [블루비커는]
                 <br />
-                블루비커는 3D 메디컬 콘텐츠 플랫폼 ‘Medmap’을 운영하고 있는
-                스타트업입니다.
+                블루비커는 3D 메디컬 콘텐츠 플랫폼 ‘Medmap’을 운영하고 있는 스타트업입니다.
                 <br />
-                환자와 의료진의 효과적인 커뮤니케이션의 새 기준을 제시하며
-                메디컬 커뮤니케이션 솔루션을 발전시켜 나가고 있습니다.
+                환자와 의료진의 효과적인 커뮤니케이션의 새 기준을 제시하며 메디컬 커뮤니케이션 솔루션을 발전시켜 나가고
+                있습니다.
                 <br />
-                Medmap은 정확하고 다양한 3D 메디컬 콘텐츠를 제공하여 시술 원리와
-                과정을 쉽게 설명할 수 있도록 도와줍니다. 또한 환자의 이해를 돕고
-                신뢰도를 향상 시키며 재방문율을 높일 수 있습니다.
+                Medmap은 정확하고 다양한 3D 메디컬 콘텐츠를 제공하여 시술 원리와 과정을 쉽게 설명할 수 있도록
+                도와줍니다. 또한 환자의 이해를 돕고 신뢰도를 향상 시키며 재방문율을 높일 수 있습니다.
                 <br />
-                블루비커는 자유롭고 수평적인 분위기에서 각 분야 전문가인
-                동료들과 최대한의 능력을 발휘하며 함께하고 있습니다. 원하는
-                시간과 장소, 언제 어디서나, 블루비커와 함께 할 수 있습니다.
+                블루비커는 자유롭고 수평적인 분위기에서 각 분야 전문가인 동료들과 최대한의 능력을 발휘하며 함께하고
+                있습니다. 원하는 시간과 장소, 언제 어디서나, 블루비커와 함께 할 수 있습니다.
                 <br />
                 <br />
-                블루비커는 의료 분야 커뮤니케이션 서비스의 신규 개발과 고도화를
-                진행하고 있습니다. 다양한 최신 기술을 시도하고 접하실 수
-                있습니다. 저희 회사에 관심이 있다면 언제든지 귀한 능력을
-                받아들일 준비가 되어있습니다. 많은 지원 부탁드립니다.
+                블루비커는 의료 분야 커뮤니케이션 서비스의 신규 개발과 고도화를 진행하고 있습니다. 다양한 최신 기술을
+                시도하고 접하실 수 있습니다. 저희 회사에 관심이 있다면 언제든지 귀한 능력을 받아들일 준비가
+                되어있습니다. 많은 지원 부탁드립니다.
                 <br />
                 <br />
                 [빠르게 성장하고 있습니다]
@@ -102,8 +101,7 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 [언론에서 소개된 블루비커]
                 <br />
-                • 블루비커, '세계보건의 날' 맞아 메디컬 일러스트 플랫폼 공식
-                론칭(2020.04.16)
+                • 블루비커, '세계보건의 날' 맞아 메디컬 일러스트 플랫폼 공식 론칭(2020.04.16)
                 <br />
                 http://kr.aving.net/news/articleView.html?idxno=1564478
                 <br />
@@ -111,16 +109,15 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 https://www.khanews.com/news/articleView.html?idxno=204038
                 <br />
-                • 메디컬 커뮤니케이션 스타트업 ‘블루비커’, 마이크로소프트 애드인
-                공식 출시(2021.02.25)
+                • 메디컬 커뮤니케이션 스타트업 ‘블루비커’, 마이크로소프트 애드인 공식 출시(2021.02.25)
                 <br />
                 https://platum.kr/archives/158548
                 <br />
                 <br />
                 <strong>주요업무</strong>
                 <br />
-                ✓ 블루비커와 함께 한국을 넘어 글로벌 무대에서도 메디컬
-                커뮤니케이션을 혁신 할 "웹 프론트 개발자"를 모십니다!
+                ✓ 블루비커와 함께 한국을 넘어 글로벌 무대에서도 메디컬 커뮤니케이션을 혁신 할 "웹 프론트 개발자"를
+                모십니다!
                 <br />
                 <br />
                 [주요업무] • React 기반 웹 프론트엔드 개발
@@ -145,20 +142,17 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 • 웹 개발경력이 4년 이상이신 분<br />
                 • React 전문성을 보유하신 분<br />
-                • Modern Web, JavaScript, Typescript에 대한 깊은 이해가 있으신
-                분<br />
+                • Modern Web, JavaScript, Typescript에 대한 깊은 이해가 있으신 분<br />
                 • Github을 이용한 협업이 가능하신 분<br />
                 • 다른 팀과 협업 및 커뮤니케이션에 능숙하신 분<br />
-                • 성장하는 스타트업에서 함께 의미 있는 결과를 만들어 나가고
-                싶으신 분<br />
+                • 성장하는 스타트업에서 함께 의미 있는 결과를 만들어 나가고 싶으신 분<br />
                 <br />
                 <strong>우대사항</strong>
                 <br />
                 [우대사항]
                 <br />
                 • 요구사항을 파악하여 데이터 모델과 설계가 가능하신 분<br />
-                • 기획, 디자인, 백엔드와 능동적인 협업 및 커뮤니케이션이
-                가능하신 분<br />
+                • 기획, 디자인, 백엔드와 능동적인 협업 및 커뮤니케이션이 가능하신 분<br />
                 • 주니어 개발자를 리딩하고 멘토링 가능하신 분<br />
                 <br />
                 <strong>혜택 및 복지</strong>
@@ -168,8 +162,7 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 • 여름 방학, 겨울 방학
                 <br />
-                ▶여름방학 3일, 겨울방학 3일 연차에 따른 휴가비를 추가
-                지원합니다.
+                ▶여름방학 3일, 겨울방학 3일 연차에 따른 휴가비를 추가 지원합니다.
                 <br />
                 <br />
                 • 자율출퇴근제
@@ -179,8 +172,7 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 • 자기계발비 지원
                 <br />
-                ▶세미나, 워크샵, 컨퍼런스, 업무 관련 도서구입비 등 팀원의 성장을
-                응원합니다.
+                ▶세미나, 워크샵, 컨퍼런스, 업무 관련 도서구입비 등 팀원의 성장을 응원합니다.
                 <br />
                 <br />
                 • 건강검진비 지원
@@ -190,8 +182,8 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 • 최고 사양의 개인장비 지원
                 <br />
-                ▶ iMac, Macbook Pro, 데스크탑, 노트북 등 원하는 개인별 맞춤
-                디바이스 제공하여 최고의 업무환경을 제공해 드립니다.
+                ▶ iMac, Macbook Pro, 데스크탑, 노트북 등 원하는 개인별 맞춤 디바이스 제공하여 최고의 업무환경을 제공해
+                드립니다.
                 <br />
                 <br />
                 •편리한 교통
@@ -201,8 +193,7 @@ const JobDetailMain = ({pageId}) => {
                 <br />
                 •공유오피스
                 <br />
-                ▶커뮤니티 매니저가 상시 관리하는 최신 시설의 오피스에서
-                근무합니다.
+                ▶커뮤니티 매니저가 상시 관리하는 최신 시설의 오피스에서 근무합니다.
                 <br />
                 (에스프레소 머신, Tea, 간식 무제한 제공)
                 <br />
@@ -235,37 +226,30 @@ const JobDetailMain = ({pageId}) => {
                 ＜블루비커 개발팀 소개＞
                 <br />
                 <br />
-                ✓ 저희 개발팀은 팀원 모두 새로운 기술과 방법을 도입하는데
-                주저하지 않고, 신기술에 대한 스터디와 공유를 즐기며 일하고
-                있습니다. 합류하시면 자율성과 소통을 바탕으로 좋은 동료들과 함께
-                일하는 기쁨을 느끼실 수 있을 것이라 확신합니다.
+                ✓ 저희 개발팀은 팀원 모두 새로운 기술과 방법을 도입하는데 주저하지 않고, 신기술에 대한 스터디와 공유를
+                즐기며 일하고 있습니다. 합류하시면 자율성과 소통을 바탕으로 좋은 동료들과 함께 일하는 기쁨을 느끼실 수
+                있을 것이라 확신합니다.
                 <br />
-                현재 개발팀은 백엔드, 프론트엔드, 그래픽스, Hololens 2, 네이티브
-                앱, 클라우드, 데이터베이스 파트로 구성되어 있습니다. 개발 팀은
-                내부 기획 파트, 디자인 파트, 그래픽스, 아티스트 파트와 협업 하여
-                바이오 메디컬 분야의 서비스 개발을 끊임없이 진행하고 있습니다.
+                현재 개발팀은 백엔드, 프론트엔드, 그래픽스, Hololens 2, 네이티브 앱, 클라우드, 데이터베이스 파트로
+                구성되어 있습니다. 개발 팀은 내부 기획 파트, 디자인 파트, 그래픽스, 아티스트 파트와 협업 하여 바이오
+                메디컬 분야의 서비스 개발을 끊임없이 진행하고 있습니다.
                 <br />
                 <br />
                 [블루비커 기술 스택]
                 <br />
-                • React, WebGL, Unity, Spring Boot, .Net Core, Kotlin, Swift,
-                Stored Procedure : 개발팀에서 서비스에 적용하고 있는 기술
-                스택입니다.
+                • React, WebGL, Unity, Spring Boot, .Net Core, Kotlin, Swift, Stored Procedure : 개발팀에서 서비스에
+                적용하고 있는 기술 스택입니다.
                 <br />
                 <br />
-                • MS Azure Cloud, Netlify : 우리는 마이크로소프트의 Azure Cloud
-                의 기술들을 서비스에 활용하고 있습니다. PaaS App 및 Serverless
-                Functions 와 Static Web App 을 이용한 웹앱, Blob Storage 및 CDN
-                을 이용한 대용량 스토리지, Traffic Manager 와 FrontDoor를 이용한
-                분산처리, Notification Hub 와 PubSub 을 이용한 소켓통신 등을
-                사용합니다. 부하분산 처리가 필요하지 않은 단순한 웹 앱들은
-                Netlify 클라우드 서비스를 사용합니다.
+                • MS Azure Cloud, Netlify : 우리는 마이크로소프트의 Azure Cloud 의 기술들을 서비스에 활용하고 있습니다.
+                PaaS App 및 Serverless Functions 와 Static Web App 을 이용한 웹앱, Blob Storage 및 CDN 을 이용한 대용량
+                스토리지, Traffic Manager 와 FrontDoor를 이용한 분산처리, Notification Hub 와 PubSub 을 이용한 소켓통신
+                등을 사용합니다. 부하분산 처리가 필요하지 않은 단순한 웹 앱들은 Netlify 클라우드 서비스를 사용합니다.
                 <br />
                 <br />
-                • 그래픽스 : 자체적으로 개발한 국내 최고 수준의 WebGL 뷰어와,
-                마이크로소프트 Hololens2 의 서비스들을 개발합니다. Blender를
-                이용해서 모델링한 3D 에셋들을 활용하여 웹과 Hololens2에서
-                사용하기 위한 최적화를 진행하여 개발하고 있습니다.
+                • 그래픽스 : 자체적으로 개발한 국내 최고 수준의 WebGL 뷰어와, 마이크로소프트 Hololens2 의 서비스들을
+                개발합니다. Blender를 이용해서 모델링한 3D 에셋들을 활용하여 웹과 Hololens2에서 사용하기 위한 최적화를
+                진행하여 개발하고 있습니다.
                 <br />
               </div>
               <div className="skill_section">
@@ -285,20 +269,15 @@ const JobDetailMain = ({pageId}) => {
               <hr />
               <div>
                 <span className="datemap_header">마감일</span>
-                <span className="datemap_body">2022.11.28</span>
+                <span className="datemap_body">{company.dueDate}</span>
               </div>
               <div>
                 <span className="datemap_header">근무지역</span>
-                <span className="datemap_body">
-                  서울 용산구 한강대로 366 트윈시티 남산 2 패스트파이브
-                </span>
+                <span className="datemap_body">{company.detailLocation}</span>
               </div>
               <div>
                 <a href="https://map.naver.com/v5/?c=17,0,0,0,dh&lng=126.9729133&lat=37.5511247&type=0&title=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20366%20%ED%8A%B8%EC%9C%88%EC%8B%9C%ED%8B%B0%20%EB%82%A8%EC%82%B0">
-                  <img
-                    src="https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true"
-                    alt="네이버지도"
-                  />
+                  <img src={company.mapImage} alt="네이버지도" />
                 </a>
               </div>
             </div>
@@ -306,14 +285,11 @@ const JobDetailMain = ({pageId}) => {
               <div className="companyinfo_content">
                 <button className="companyDetail_btn" type="button">
                   <div>
-                    <img
-                      src="https://static.wanted.co.kr/images/wdes/0_5.0852ff23.jpg"
-                      alt="로고이미지"
-                    />
+                    <img src={company.companyImage} alt="로고이미지" />
                   </div>
                   <div>
-                    <h5>블루비커</h5>
-                    <h6>IT, 컨텐츠</h6>
+                    <h5>{company.companyName}</h5>
+                    <h6>{company.workCategory}</h6>
                   </div>
                 </button>
                 <button className="follow_btn" type="button">
@@ -325,26 +301,21 @@ const JobDetailMain = ({pageId}) => {
                   <Warning_ic width="24" height="24" />
                   <div className="top_warning_toggle">
                     <h5>
-                      본 채용정보는 원티드랩의 동의없이 무단전재, 재배포,
-                      재가공할 수 없으며, 구직활동 이외의
+                      본 채용정보는 원티드랩의 동의없이 무단전재, 재배포, 재가공할 수 없으며, 구직활동 이외의
                       <br />
                       용도로 사용할 수 없습니다.
                     </h5>
                     <ArrowDown_ic width="14" height="14" />
                   </div>
                 </div>
-                <div className="bottom_warning" style={{ display: 'none' }}>
-                  본 채용 정보는 블루비커에서 제공한 자료를 바탕으로
-                  원티드랩에서 표현을 수정하고 이의 배열 및 구성을 편집하여
-                  완성한 원티드랩의 저작자산이자 영업자산입니다. 본 정보 및
-                  데이터베이스의 일부 내지는 전부에 대하여 원티드랩의 동의 없이
-                  무단전재 또는 재배포, 재가공 및 크롤링할 수 없으며, 게재된
-                  채용기업의 정보는 구직자의 구직활동 이외의 용도로 사용될 수
-                  없습니다. 원티드랩은 블루비커에서 게재한 자료에 대한 오류나 그
-                  밖에 원티드랩이 가공하지 않은 정보의 내용상 문제에 대하여
-                  어떠한 보장도 하지 않으며, 사용자가 이를 신뢰하여 취한 조치에
-                  대해 책임을 지지 않습니다. {'<'}저작권자 (주)원티드랩.
-                  무단전재-재배포금지{'>'}
+                <div className="bottom_warning" style={{ display: "none" }}>
+                  본 채용 정보는 블루비커에서 제공한 자료를 바탕으로 원티드랩에서 표현을 수정하고 이의 배열 및 구성을
+                  편집하여 완성한 원티드랩의 저작자산이자 영업자산입니다. 본 정보 및 데이터베이스의 일부 내지는 전부에
+                  대하여 원티드랩의 동의 없이 무단전재 또는 재배포, 재가공 및 크롤링할 수 없으며, 게재된 채용기업의
+                  정보는 구직자의 구직활동 이외의 용도로 사용될 수 없습니다. 원티드랩은 블루비커에서 게재한 자료에 대한
+                  오류나 그 밖에 원티드랩이 가공하지 않은 정보의 내용상 문제에 대하여 어떠한 보장도 하지 않으며,
+                  사용자가 이를 신뢰하여 취한 조치에 대해 책임을 지지 않습니다. {"<"}저작권자 (주)원티드랩.
+                  무단전재-재배포금지{">"}
                 </div>
               </div>
             </div>
@@ -420,13 +391,7 @@ const JobDetailMain = ({pageId}) => {
                   alt="썸네일"
                 />
                 <button className="bookmark" type="buttom">
-                  <svg
-                    width="22"
-                    height="22"
-                    viewBox="0 0 18 18"
-                    fill="none"
-                    xmlns="https://www.w3.org/2000/svg"
-                  >
+                  <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="https://www.w3.org/2000/svg">
                     <path
                       fill-rule="evenodd"
                       clip-rule="evenodd"

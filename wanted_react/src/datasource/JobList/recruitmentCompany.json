@@ -7,7 +7,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 1
+        "id": 1,
+
+        "dueDate": "2022.11.28",
+        "detailLocation": "서울 용산구 한강대로 366 트윈시티 남산 2 패스트파이브",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "IT,컨텐츠",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.0852ff23.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__1080_790.jpg&w=1000&q=75",
@@ -16,7 +22,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 2
+        "id": 2,
+
+        "dueDate": "상시",
+        "detailLocation": "서울특별시 구로구 디지털로31길 19, 1002호",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.282792a7.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F16196%2F3kcdxtkdyessl9mj__400_400.jpg&w=400&q=75",
@@ -25,7 +37,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 3
+        "id": 3,
+
+        "dueDate": "상시",
+        "detailLocation": "서울특별시 구로구 디지털로31길 19, 1002호",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.282792a7.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F31860%2F3rr16ziwfg9ktwnv__400_400.jpg&w=400&q=75",
@@ -34,7 +52,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 4
+        "id": 4,
+
+        "dueDate": "상시",
+        "detailLocation": "서울시 송파구 법원로11길 12, 8층",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.25785996.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F131%2Fzlnythvhfobleo2g__400_400.jpg&w=400&q=75",
@@ -43,7 +67,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 5
+        "id": 5,
+
+        "dueDate": "상시",
+        "detailLocation": "서울시 송파구 법원로11길 12, 8층",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.25785996.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F22333%2Feh1mycy7nnltf5ah__1080_790.jpg&w=1000&q=75",
@@ -52,7 +82,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 6
+        "id": 6,
+
+        "dueDate": "상시",
+        "detailLocation": "서울시 송파구 법원로11길 12, 8층",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.25785996.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F16196%2F3kcdxtkdyessl9mj__400_400.jpg&w=400&q=75",
@@ -61,7 +97,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 7
+        "id": 7,
+
+        "dueDate": "상시",
+        "detailLocation": "서울시 송파구 법원로11길 12, 8층",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.25785996.jpg"
       },
       {
         "imgSrc":"https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F31860%2F3rr16ziwfg9ktwnv__400_400.jpg&w=400&q=75",
@@ -70,7 +112,13 @@
         "responseRate":"응답률 매우 높음",
         "region":"서울·한국",
         "pay":"채용보상금 1,000,000원",
-        "id": 8
+        "id": 8,
+
+        "dueDate": "상시",
+        "detailLocation": "서울시 송파구 법원로11길 12, 8층",
+        "mapImage" : "https://github.com/serak0310/ASAC_frontend_study/blob/main/Ch02/mission_wanted/map.png?raw=true",
+        "workCategory": "전문, 과학기술",
+        "companyImage": "https://static.wanted.co.kr/images/wdes/0_5.25785996.jpg"
       }
     ]
   }
