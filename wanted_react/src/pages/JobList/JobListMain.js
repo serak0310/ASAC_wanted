@@ -7,8 +7,15 @@ import JobListCategory from "./JobListCategory";
 import RecruitCompanyContent from "./RecruitCompanyContent";
 import dataForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
 import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const JobListMain = () => {
+  const navigate = useNavigate();
+
+  function recruitmentClick(id) {
+    navigate(`/joblist/${id}`, { state: { key: id } });
+  }
+
   return (
     <main>
       <JobListCategory />
@@ -107,17 +114,28 @@ const JobListMain = () => {
       <div className="grid_section">
         <ul className="recruitment_list">
           {dataForRecruitment.companies.map((company) => (
-            <Link to={`/joblist/${company.id}`} key={company.id}>
-              <RecruitCompanyContent
-                imgSrc={company.imgSrc}
-                recruitTitle={company.recruitTitle}
-                companyName={company.companyName}
-                responseRate={company.responseRate}
-                region={company.region}
-                pay={company.pay}
-                key={company.id}
-              />
-            </Link>
+            <RecruitCompanyContent
+              key={company.id}
+              imgSrc={company.imgSrc}
+              recruitTitle={company.recruitTitle}
+              companyName={company.companyName}
+              responseRate={company.responseRate}
+              region={company.region}
+              pay={company.pay}
+              onClick={() => recruitmentClick(company.id)}
+            />
+
+            // <Link to={`/joblist/${company.id}`} key={company.id}>
+            //   <RecruitCompanyContent
+            //     imgSrc={company.imgSrc}
+            //     recruitTitle={company.recruitTitle}
+            //     companyName={company.companyName}
+            //     responseRate={company.responseRate}
+            //     region={company.region}
+            //     pay={company.pay}
+            //     key={company.id}
+            //   />
+            // </Link>
           ))}
         </ul>
         <div className="typetest_banner">
@@ -131,17 +149,16 @@ const JobListMain = () => {
         </div>
         <ul className="recruitment_list">
           {dataForRecruitment.companies.map((company) => (
-            <Link to={`/joblist/${company.id}`} key={company.id}>
-              <RecruitCompanyContent
-                imgSrc={company.imgSrc}
-                recruitTitle={company.recruitTitle}
-                companyName={company.companyName}
-                responseRate={company.responseRate}
-                region={company.region}
-                pay={company.pay}
-                key={company.id}
-              />
-            </Link>
+            <RecruitCompanyContent
+              key={company.id}
+              imgSrc={company.imgSrc}
+              recruitTitle={company.recruitTitle}
+              companyName={company.companyName}
+              responseRate={company.responseRate}
+              region={company.region}
+              pay={company.pay}
+              onClick={() => recruitmentClick(company.id)}
+            />
           ))}
         </ul>
       </div>

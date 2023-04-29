@@ -8,9 +8,10 @@ const RecruitCompanyContent = ({
   responseRate,
   region,
   pay,
+  onClick, // onClick props 추가
 }) => {
   return (
-    <li className="recruitment_content">
+    <li className="recruitment_content" onClick={onClick}>
         <div className="content_header">
           <img src={imgSrc} alt="" className="recruitment_image" />
           <button className="recruitment_bookmark"><Bookmark_ic /></button>
