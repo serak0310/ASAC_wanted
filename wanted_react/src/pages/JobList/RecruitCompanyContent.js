@@ -21,7 +21,7 @@ const RecruitCompanyContent = ({
           <div className="recruitment_companyname">{companyName}</div>
           <div className="recruitment_response_rate">{responseRate}</div>
           <div className="recruitment_region">{region}</div>
-          <div className="recruitment_pay">{pay}</div>
+          <div className="recruitment_pay">채용보상금 {pay.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',')}원</div>
         </div>
     </li>
   );

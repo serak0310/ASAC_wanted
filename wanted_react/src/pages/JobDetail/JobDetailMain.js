@@ -11,10 +11,16 @@ import JobDetailTechStack from "./JobDetailTechStack";
 import JobDetailSlider from "./JobDetailSlider";
 import dummyForRecruitment from "../../datasource/JobList/recruitmentCompany.json";
 import KakaoMap from "./KakaoMap";
+import RecruitCompanyContent from "../JobList/RecruitCompanyContent";
+import { useNavigate } from "react-router-dom";
 
 const JobDetailMain = ({ pageId }) => {
   const company = dummyForRecruitment.companies.filter((company) => company.id === pageId)[0];
+  const navigate = useNavigate();
 
+  function recruitmentClick(id) {
+    navigate(`/joblist/${id}`, { state: { key: id } });
+  }
   return (
     <main>
       <div className="main_wrapper">
@@ -278,9 +284,6 @@ const JobDetailMain = ({ pageId }) => {
               </div>
               <div>
                 <KakaoMap lat={company.lat} lng={company.lng} />
-                {/* <a href="https://map.naver.com/v5/?c=17,0,0,0,dh&lng=126.9729133&lat=37.5511247&type=0&title=%EC%84%9C%EC%9A%B8%ED%8A%B9%EB%B3%84%EC%8B%9C%20%EC%9A%A9%EC%82%B0%EA%B5%AC%20%ED%95%9C%EA%B0%95%EB%8C%80%EB%A1%9C%20366%20%ED%8A%B8%EC%9C%88%EC%8B%9C%ED%8B%B0%20%EB%82%A8%EC%82%B0">
-                  <img src={company.mapImage} alt="네이버지도" />
-                </a> */}
               </div>
             </div>
             <div className="bottom_banner_section">
@@ -384,38 +387,19 @@ const JobDetailMain = ({ pageId }) => {
           <div className="bottom_main_title">
             <h3>이 포지션을 찾고 계셨나요?</h3>
           </div>
-          <ul className="company_list" id="company_list">
-            <li className="company_item" id="company_item">
-              <div className="company_item_header">
-                <img
-                  className="thumbnail"
-                  src="https://image.wanted.co.kr/optimize?src=https%3A%2F%2Fstatic.wanted.co.kr%2Fimages%2Fcompany%2F39626%2Fq3yeohr58zxaugjp__400_400.jpg&w=400&q=75"
-                  alt="썸네일"
-                />
-                <button className="bookmark" type="buttom">
-                  <svg width="22" height="22" viewBox="0 0 18 18" fill="none" xmlns="https://www.w3.org/2000/svg">
-                    <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
-                      d="M3.58065 1C3.25997 1 3 1.26206 3 1.58533V16.4138C3 16.8632 3.48164 17.145 3.86873 16.922L9.00004 13.9662L14.1313 16.922C14.5184 17.145 15 16.8632 15 16.4138V1.58533C15 1.26206 14.74 1 14.4194 1H9.00004H3.58065ZM8.71195 12.7838C8.89046 12.681 9.10961 12.681 9.28812 12.7838L13.8387 15.4052V2.17067H9.00004H4.1613V15.4052L8.71195 12.7838Z"
-                      fill="white"
-                    ></path>
-                    <path
-                      d="M9.28812 12.7838C9.10961 12.681 8.89046 12.681 8.71195 12.7838L4.1613 15.4052V2.17067H9.00004H13.8387V15.4052L9.28812 12.7838Z"
-                      fill="black"
-                      fill-opacity="0.25"
-                    ></path>
-                  </svg>
-                </button>
-              </div>
-              <div className="company_item_body">
-                <div className="title">백엔드 개발자(PHP)</div>
-                <div className="name">온채널</div>
-                <div className="responseRate">응답률 매우 높음</div>
-                <div className="region">서울·한국</div>
-                <div className="pay">채용보상금 1,000,000원</div>
-              </div>
-            </li>
+          <ul className="recruitment_list">
+            {dummyForRecruitment.companies.map((company) => (
+              <RecruitCompanyContent
+                key={company.id}
+                imgSrc={company.imgSrc}
+                recruitTitle={company.recruitTitle}
+                companyName={company.companyName}
+                responseRate={company.responseRate}
+                region={company.region}
+                pay={company.pay}
+                onClick={() => recruitmentClick(company.id)}
+              />
+            ))}
           </ul>
         </div>
       </div>
