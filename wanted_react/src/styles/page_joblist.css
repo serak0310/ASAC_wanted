@@ -150,6 +150,12 @@ main {
     justify-content: center;
     align-items: center;
     flex-shrink: 0;
+
+  }
+
+  .category_button:hover {
+    border: 1px solid #3366ff;
+    padding: 7px 14px;
   }
   
   .custom_section .bottom_tag .category_button .icon_img {

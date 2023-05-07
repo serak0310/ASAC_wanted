@@ -13,6 +13,7 @@ import dummyForRecruitment from "../../datasource/JobList/recruitmentCompany.jso
 import KakaoMap from "./KakaoMap";
 import RecruitCompanyContent from "../JobList/RecruitCompanyContent";
 import { useNavigate } from "react-router-dom";
+import JobDetailCompany from "./JobDetailCompany";
 
 const JobDetailMain = ({ pageId }) => {
   const company = dummyForRecruitment.companies.filter((company) => company.id === pageId)[0];
@@ -287,20 +288,7 @@ const JobDetailMain = ({ pageId }) => {
               </div>
             </div>
             <div className="bottom_banner_section">
-              <div className="companyinfo_content">
-                <button className="companyDetail_btn" type="button">
-                  <div>
-                    <img src={company.companyImage} alt="로고이미지" />
-                  </div>
-                  <div>
-                    <h5>{company.companyName}</h5>
-                    <h6>{company.workCategory}</h6>
-                  </div>
-                </button>
-                <button className="follow_btn" type="button">
-                  팔로우
-                </button>
-              </div>
+              <JobDetailCompany pageId={pageId}/>
               <div className="warning_content">
                 <div className="top_warning">
                   <Warning_ic width="24" height="24" />
