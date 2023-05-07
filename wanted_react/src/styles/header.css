@@ -75,7 +75,7 @@ header {
     display: flex;
 }
 
-.sub_menu li p {
+.sub_menu>li>p {
     font-weight: 400;
     color: #e1e2e3;
     font-size: small;

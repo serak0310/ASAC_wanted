@@ -4,6 +4,7 @@ import { ReactComponent as DropDown_ic } from '../../assets/svg/ic_dropdown.svg'
 import { ReactComponent as ArrowRight_ic } from '../../assets/svg/ic_arrow_right.svg';
 import { ReactComponent as ArrowLeft_ic } from '../../assets/svg/ic_arrow_left.svg';
 import CategoryButtonSlider from './CategoryButtonSlider';
+import CategorySelections from './CategorySelections';
 
 const JobListCategory = () => {
   return (
@@ -23,29 +24,7 @@ const JobListCategory = () => {
           </div>
         </div>
       </div>
-      <div className="middle_drop">
-        <div className="left">
-          <div className="region_btn middle_drop_btn">
-            <span>지역</span>
-            <span style={{ color: '#36f', fontWeight: '500' }}>한국</span>
-          </div>
-          <div className="career_btn middle_drop_btn">
-            <span>경력</span>
-            <span style={{ color: '#36f', fontWeight: '500' }}>전체</span>
-            <DropDown_ic />
-          </div>
-          <div className="skill_btn middle_drop_btn">
-            <span>기술스택</span>
-            <DropDown_ic />
-          </div>
-        </div>
-        <div className="right">
-          <div className="sort_btn middle_drop_btn">
-            <span>응답률순</span>
-            <DropDown_ic />
-          </div>
-        </div>
-      </div>
+      <CategorySelections/>
       <hr className="divider_container" />
       <div className="bottom_tag">
         <div className="category_slide_left_btn btn">

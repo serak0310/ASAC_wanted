@@ -7,8 +7,10 @@ import { ReactComponent as Google_ic } from "../../assets/svg/ic_social_google.s
 import { ReactComponent as Kakao_ic } from "../../assets/svg/ic_social_kakao.svg";
 import JoinModal from "./JoinModal";
 
-const LoginModal = ({ setModalOpen, setModalMode }) => {
+const LoginModal = ({ setModalOpen, setModalMode, setcheckedEmail }) => {
   const inputRef = useRef();
+
+  const localStorage = window.localStorage;
 
   useEffect(() => {
     inputRef.current.focus();
@@ -20,6 +22,31 @@ const LoginModal = ({ setModalOpen, setModalMode }) => {
   //   };
   const showJoinModal = () => {
     setModalMode(2);
+    setcheckedEmail(inputRef.current.value);
+  };
+
+  const showPasswordModal = () => {
+    setModalMode(3);
+    setcheckedEmail(inputRef.current.value);
+  };
+
+  const handleOnclick = () => {
+    console.log(localStorage.getItem("loginEmail"));
+    console.log(localStorage.getItem("loginPassword"));
+    IsEmailExist(inputRef.current.value) ? showPasswordModal() : showJoinModal();
+  };
+
+  const IsEmailExist = (email) => {
+    let emails = localStorage.getItem("loginEmail");
+    if (emails === null) {
+      return false;
+    } else {
+      if (emails.includes(email)) {
+        return true;
+      } else {
+        return false;
+      }
+    }
   };
 
   return (
@@ -52,7 +79,7 @@ const LoginModal = ({ setModalOpen, setModalMode }) => {
           className="continue_btn continue_btn_close contine_btn_open"
           id="continue_btn"
           type="button"
-          onClick={showJoinModal}
+          onClick={handleOnclick}
         >
           이메일로 계속하기
         </button>
