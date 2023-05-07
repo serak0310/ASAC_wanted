@@ -1,18 +1,23 @@
-import React, { useState } from 'react';
-import '../../styles/modal_login_join.css';
-import { ReactComponent as Logo_txt } from '../../assets/svg/logo_txt.svg';
-import { ReactComponent as Apple_ic } from '../../assets/svg/ic_social_apple.svg';
-import { ReactComponent as Facebook_ic } from '../../assets/svg/ic_social_facebook.svg';
-import { ReactComponent as Google_ic } from '../../assets/svg/ic_social_google.svg';
-import { ReactComponent as Kakao_ic } from '../../assets/svg/ic_social_kakao.svg';
-import JoinModal from './JoinModal';
+import React, { useState, useEffect, useRef } from "react";
+import "../../styles/modal_login_join.css";
+import { ReactComponent as Logo_txt } from "../../assets/svg/logo_txt.svg";
+import { ReactComponent as Apple_ic } from "../../assets/svg/ic_social_apple.svg";
+import { ReactComponent as Facebook_ic } from "../../assets/svg/ic_social_facebook.svg";
+import { ReactComponent as Google_ic } from "../../assets/svg/ic_social_google.svg";
+import { ReactComponent as Kakao_ic } from "../../assets/svg/ic_social_kakao.svg";
+import JoinModal from "./JoinModal";
 
 const LoginModal = ({ setModalOpen, setModalMode }) => {
+  const inputRef = useRef();
 
-//   const closeModal = () => {
-//     setModalOpen(false);
-//     setModalMode(1);
-//   };
+  useEffect(() => {
+    inputRef.current.focus();
+  }, []);
+
+  //   const closeModal = () => {
+  //     setModalOpen(false);
+  //     setModalMode(1);
+  //   };
   const showJoinModal = () => {
     setModalMode(2);
   };
@@ -33,6 +38,7 @@ const LoginModal = ({ setModalOpen, setModalMode }) => {
           <label for="userEmail">이메일</label>
         </div>
         <input
+          ref={inputRef}
           type="text"
           id="userEmail"
           name="userEmail"
@@ -81,10 +87,7 @@ const LoginModal = ({ setModalOpen, setModalMode }) => {
           <p>© Wantedlab, Inc.</p>
         </div>
         <div className="language_select">
-          <img
-            src="https://static.wanted.co.kr/images/wantedoneid/ico_KR.svg"
-            alt="flag"
-          />
+          <img src="https://static.wanted.co.kr/images/wantedoneid/ico_KR.svg" alt="flag" />
           <select name="language">
             <option value="Korean">한국어</option>
             <option value="English">English</option>
