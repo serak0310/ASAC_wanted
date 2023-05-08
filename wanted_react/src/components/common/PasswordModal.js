@@ -1,8 +1,9 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useState } from 'react';
 import { useRef } from 'react';
 import { useEffect } from 'react';
 import { ReactComponent as ArrowLeft_ic } from '../../assets/svg/ic_arrow_left.svg';
+import { LoginContext } from '../../context/LoginContext';
 
 const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const [inputPassword, setInputPassword] = useState('');
@@ -10,6 +11,7 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const [checkPassword, setCheckPassword] = useState(true);
   const inputRef = useRef();
   const localStorage = window.localStorage;
+  const {isLogin, setIsLogin} = useContext(LoginContext);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -28,13 +30,16 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const password = localStorage.getItem(checkedEmail);
-    if (password === inputPassword) {
+    if (password === inputRef.current.value) {
       setCheckPassword(true);
+      setButtonChange(true);
       setModalMode(0);
       setModalOpen(false);
+      setIsLogin(true)
     } else {
       setButtonChange(false);
       setCheckPassword(false);
+      setIsLogin(false)
     }
   };
 
@@ -62,17 +67,17 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
               required
               ref={inputRef}
               onChange={onChange}
-              style={!checkPassword ? { borderColor: '#f1415c' } : null}
+              // style={!checkPassword ? { borderColor: '#f1415c' } : null}
             ></input>
-            {!checkPassword ? (
+            {/* {!checkPassword ? (
               <div style={{ color: '#f1415c', marginTop: '5px' }}>
                 비밀번호가 일치하지 않습니다.
               </div>
-            ) : null}
+            ) : null} */}
           </form>
         </div>
         <button
-          disabled={!buttonChange}
+          disabled={buttonChange}
           style={
             buttonChange ? { color: 'white', backgroundColor: '#36f' } : null
           }

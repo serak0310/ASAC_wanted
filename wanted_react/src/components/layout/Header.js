@@ -1,11 +1,15 @@
-import React from "react";
+import React, { useContext } from "react";
 import "../../styles/style.css";
 import LoginButton from "./LoginButton";
+import LoggedUserIcon from "./LoggedUserIcon";
 import { ReactComponent as Search_ic } from "../../assets/svg/ic_search.svg";
 import RoundedButton from "../common/RoundedButton";
 import { Link } from "react-router-dom";
+import { LoginContext } from "../../context/LoginContext";
 
 function Header() {
+  const {isLogin, setIsLogin} = useContext(LoginContext);
+
   return (
     <header>
       <div className="nav">
@@ -59,7 +63,8 @@ function Header() {
           </li>
           {/* <li><button className="login_btn" id="login_btn" type="button">회원가입/로그인</button></li> */}
           <li>
-            <LoginButton />
+            {isLogin ? <LoggedUserIcon /> : <LoginButton />}
+            {/* <LoginButton /> */}
           </li>
           <li>
             <p>|</p>
