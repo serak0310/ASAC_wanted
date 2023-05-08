@@ -62,13 +62,34 @@ header {
     align-items: center;
 }
 
-.sub_menu button {
-    padding: 0 10px;
+.sub_menu .search_btn {
+    margin-right: 15px;
     font-weight: 600;
 }
 
 .sub_menu .login_btn {
     font-weight: 500;
+    margin-right: 15px;
+}
+
+.loggedUserIcon_wrap{
+    display: flex;
+    align-items: center;
+}
+
+.sub_menu .header_profile_btn{
+    width: 30px;
+    height: 30px; 
+    border-radius: 50%;
+    overflow: hidden;
+    margin-left: 15px;
+    margin-right: 15px;
+}
+
+.header_profile_btn img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
 .sub_menu li:last-child {
