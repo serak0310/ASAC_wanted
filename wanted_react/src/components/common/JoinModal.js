@@ -171,6 +171,8 @@ const JoinModal = ({ setModalOpen, setModalMode, checkedEmail }) => {
             onClick={() => {
               localStorage.setItem("loginEmail", loginEmail);
               localStorage.setItem("loginPassword", loginPassword);
+              setModalMode(0);
+              setModalOpen(false);
             }}
           >
             가입하기
