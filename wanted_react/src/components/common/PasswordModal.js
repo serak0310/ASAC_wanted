@@ -1,17 +1,17 @@
-import React, { useContext } from 'react';
-import { useState } from 'react';
-import { useRef } from 'react';
-import { useEffect } from 'react';
-import { ReactComponent as ArrowLeft_ic } from '../../assets/svg/ic_arrow_left.svg';
-import { LoginContext } from '../../context/LoginContext';
+import React, { useContext } from "react";
+import { useState } from "react";
+import { useRef } from "react";
+import { useEffect } from "react";
+import { ReactComponent as ArrowLeft_ic } from "../../assets/svg/ic_arrow_left.svg";
+import { LoginContext } from "../../context/LoginContext";
 
 const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
-  const [inputPassword, setInputPassword] = useState('');
+  const [inputPassword, setInputPassword] = useState("");
   const [buttonChange, setButtonChange] = useState(false);
   const [checkPassword, setCheckPassword] = useState(true);
   const inputRef = useRef();
   const localStorage = window.localStorage;
-  const {isLogin, setIsLogin} = useContext(LoginContext);
+  const { isLogin, setIsLogin } = useContext(LoginContext);
 
   useEffect(() => {
     inputRef.current.focus();
@@ -29,17 +29,21 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
-    const password = localStorage.getItem(checkedEmail);
+    const password = localStorage.getItem("loginPassword");
+    console.log(localStorage.getItem("loginEmail"));
+    console.log(localStorage.getItem("loginPassword"));
+    console.log(password);
+    console.log(inputRef.current.value);
     if (password === inputRef.current.value) {
       setCheckPassword(true);
       setButtonChange(true);
       setModalMode(0);
       setModalOpen(false);
-      setIsLogin(true)
+      setIsLogin(true);
     } else {
       setButtonChange(false);
       setCheckPassword(false);
-      setIsLogin(false)
+      setIsLogin(false);
     }
   };
 
@@ -51,15 +55,17 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
             setModalMode(1);
           }}
         >
-          <ArrowLeft_ic className="password-modal__back_btn"/>
+          <ArrowLeft_ic className="password-modal__back_btn" />
         </span>
         <h1 className="password-modal__title">이메일로 로그인</h1>
         <div> </div>
       </div>
       <div className="password-modal__body">
         <div className="password">
-          <form action="" className="password-form" onSubmit={handleOnSubmit}>
-            <label for="password"><p className='password-form__title'>비밀번호</p></label>
+          <form action="" className="password-form">
+            <label for="password">
+              <p className="password-form__title">비밀번호</p>
+            </label>
             <input
               type="password"
               id="password"
@@ -77,10 +83,8 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
           </form>
         </div>
         <button
-          disabled={buttonChange}
-          style={
-            buttonChange ? { color: 'white', backgroundColor: '#36f' } : null
-          }
+          disabled={!buttonChange}
+          style={buttonChange ? { color: "white", backgroundColor: "#36f" } : null}
           onClick={handleOnSubmit}
         >
           다음

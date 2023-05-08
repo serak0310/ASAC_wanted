@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import "../../styles/modal_login_join.css";
 
-const JoinModal = ({ setModalOpen, setModalMode, checkedEmail  }) => {
+const JoinModal = ({ setModalOpen, setModalMode, checkedEmail }) => {
   let [loginEmail, setLoginEmail] = useState(checkedEmail);
   let [loginPassword, setLoginPassword] = useState("");
 
