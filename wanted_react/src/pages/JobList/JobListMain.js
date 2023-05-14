@@ -22,7 +22,9 @@ const JobListMain = () => {
       <div className="recommend_section">
         <div className="bookmark">
           <BookmarkFill_ic />
-          <span>북마크 모아보기 </span>
+          <Link to="/bookmarks">
+            <span>북마크 모아보기</span>
+          </Link>
           <ArrowRight_ic width="12" height="12" fill="#3366FF" />
         </div>
         <div className="section_title">

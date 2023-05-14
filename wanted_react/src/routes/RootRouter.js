@@ -5,6 +5,7 @@ import Home from "../pages/Home/Home";
 import JobList from "../pages/JobList/JobList";
 import JobDetail from "../pages/JobDetail/JobDetail";
 import NotFound from "../pages/NotFound/NotFound";
+import Bookmarks from "../pages/Bookmark/Bookmarks";
 
 const RootRouter = () => {
   return (
@@ -12,11 +13,11 @@ const RootRouter = () => {
       <BrowserRouter>
         <Header />
         <Routes>
-          <Route path="/" element={<Home/>}></Route>
-          <Route path="/joblist" element={<JobList/>}></Route>
-          <Route path="/joblist/:id" element={<JobDetail/>}></Route>
-    
-          <Route path="*" element={<NotFound/>}></Route>
+          <Route path="/" element={<Home />}></Route>
+          <Route path="/joblist" element={<JobList />}></Route>
+          <Route path="/joblist/:id" element={<JobDetail />}></Route>
+          <Route path="/bookmarks" element={<Bookmarks />}></Route>
+          <Route path="*" element={<NotFound />}></Route>
         </Routes>
       </BrowserRouter>
     </div>

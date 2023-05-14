@@ -5,6 +5,7 @@
 @import "page_joblist.css";
 @import "page_jobdetail.css";
 @import '404.css';
+@import 'bookmark.css';
 
 a {
     text-decoration: none;
