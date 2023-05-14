@@ -11,8 +11,8 @@ function App() {
 
   return (
     <div className="App">
-      <LoginContext.Provider value={{isLogin, setIsLogin}}>
-        <RootRouter isLogin={isLogin} setIsLogin={setIsLogin}/>
+      <LoginContext.Provider value={{ isLogin, setIsLogin }}>
+        <RootRouter isLogin={isLogin} setIsLogin={setIsLogin} />
         {/* <Home/> */}
         {/* <JobList/> */}
         {/* <JobDetail/> */}

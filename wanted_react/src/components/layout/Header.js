@@ -5,10 +5,15 @@ import LoggedUserIcon from "./LoggedUserIcon";
 import { ReactComponent as Search_ic } from "../../assets/svg/ic_search.svg";
 import RoundedButton from "../common/RoundedButton";
 import { Link } from "react-router-dom";
-import { LoginContext } from "../../context/LoginContext";
+// import { LoginContext } from "../../context/LoginContext";  // useContext
+// 리덕스
+import { useDispatch, useSelector } from 'react-redux';
+import { logout } from '../../modules/Login';
 
 function Header() {
-  const {isLogin, setIsLogin} = useContext(LoginContext);
+  // const {isLogin, setIsLogin} = useContext(LoginContext);  // useContext
+
+  const isLogined = useSelector((state) => state.login.logged);
 
   return (
     <header>
@@ -63,7 +68,7 @@ function Header() {
           </li>
           {/* <li><button className="login_btn" id="login_btn" type="button">회원가입/로그인</button></li> */}
           <li>
-            {isLogin ? <LoggedUserIcon /> : <LoginButton />}
+            {isLogined ? <LoggedUserIcon /> : <LoginButton />}
             {/* <LoginButton /> */}
           </li>
           <li>

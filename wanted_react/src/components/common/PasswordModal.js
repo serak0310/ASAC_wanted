@@ -4,14 +4,20 @@ import { useRef } from "react";
 import { useEffect } from "react";
 import { ReactComponent as ArrowLeft_ic } from "../../assets/svg/ic_arrow_left.svg";
 import { LoginContext } from "../../context/LoginContext";
+// 리덕스
+import { useDispatch } from 'react-redux';
+import { login } from '../../modules/Login';
 
 const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const [inputPassword, setInputPassword] = useState("");
   const [buttonChange, setButtonChange] = useState(false);
-  const [checkPassword, setCheckPassword] = useState(true);
   const inputRef = useRef();
-  const localStorage = window.localStorage;
+  // const localStorage = window.localStorage;  //useState
   const { isLogin, setIsLogin } = useContext(LoginContext);
+
+  // 리덕스
+  const dispatch = useDispatch();
+  const getlogin = () => dispatch(login());
 
   useEffect(() => {
     inputRef.current.focus();
@@ -19,7 +25,6 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
 
   const onChange = (event) => {
     setInputPassword(event.target.value);
-    setCheckPassword(true);
     if (event.target.value) {
       setButtonChange(true);
     } else {
@@ -30,19 +35,15 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const handleOnSubmit = (event) => {
     event.preventDefault();
     const password = localStorage.getItem("loginPassword");
-    console.log(localStorage.getItem("loginEmail"));
-    console.log(localStorage.getItem("loginPassword"));
-    console.log(password);
-    console.log(inputRef.current.value);
+
     if (password === inputRef.current.value) {
-      setCheckPassword(true);
       setButtonChange(true);
       setModalMode(0);
       setModalOpen(false);
-      setIsLogin(true);
+      // setIsLogin(true);  //useState
+      getlogin(); // 리덕스로 로그인
     } else {
       setButtonChange(false);
-      setCheckPassword(false);
       setIsLogin(false);
     }
   };
@@ -73,13 +74,7 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
               required
               ref={inputRef}
               onChange={onChange}
-              // style={!checkPassword ? { borderColor: '#f1415c' } : null}
             ></input>
-            {/* {!checkPassword ? (
-              <div style={{ color: '#f1415c', marginTop: '5px' }}>
-                비밀번호가 일치하지 않습니다.
-              </div>
-            ) : null} */}
           </form>
         </div>
         <button
