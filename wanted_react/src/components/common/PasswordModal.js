@@ -16,6 +16,7 @@ const PasswordModal = ({ checkedEmail, setModalOpen, setModalMode }) => {
   const { isLogin, setIsLogin } = useContext(LoginContext);
 
   // 리덕스
+  // Redux 스토어의 상태를 업데이트
   const dispatch = useDispatch();
   const getlogin = () => dispatch(login());
 

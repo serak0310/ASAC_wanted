@@ -13,7 +13,7 @@ const initialState = {
   logged: false,
 };
 
-export default function bookmark(state = initialState, action) {
+export default function loginout(state = initialState, action) {
   switch (action.type) {
     case LOGIN:
       return {

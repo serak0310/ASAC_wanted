@@ -7,13 +7,14 @@ import RoundedButton from "../common/RoundedButton";
 import { Link } from "react-router-dom";
 // import { LoginContext } from "../../context/LoginContext";  // useContext
 // 리덕스
-import { useDispatch, useSelector } from 'react-redux';
-import { logout } from '../../modules/Login';
+import { useDispatch, useSelector } from "react-redux";
+import { login } from "../../modules/Login";
 
 function Header() {
   // const {isLogin, setIsLogin} = useContext(LoginContext);  // useContext
 
-  const isLogined = useSelector((state) => state.login.logged);
+  // Redux 스토어의 상태(state)에서 loginout 리듀서의 logged 속성을 선택적으로 추출
+  const isLogined = useSelector((state) => state.loginout.logged);
 
   return (
     <header>
