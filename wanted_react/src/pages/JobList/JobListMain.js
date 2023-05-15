@@ -9,12 +9,15 @@ import dataForRecruitment from "../../datasource/JobList/recruitmentCompany.json
 import { Link } from "react-router-dom";
 import { useNavigate } from "react-router-dom";
 
+
 const JobListMain = () => {
   const navigate = useNavigate();
 
   function recruitmentClick(id) {
     navigate(`/joblist/${id}`, { state: { key: id } });
   }
+
+
 
   return (
     <main>

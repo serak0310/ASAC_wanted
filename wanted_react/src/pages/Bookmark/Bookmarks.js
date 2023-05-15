@@ -7,16 +7,10 @@ import { useNavigate } from "react-router-dom";
 const Bookmarks = () => {
   const bList = useSelector((state) => state);
 
-//   const companyList = dataForRecruitment.companies.filter((company) =>
-//     bList.bookmark.bookmarkList.includes(company.id)
-//   );
-
   const navigate = useNavigate();
   function recruitmentClick(id) {
     navigate(`/joblist/${id}`, { state: { key: id } });
   }
-
-//   console.log(companyList);
 
   return (
     <div className="bookmark-page">
