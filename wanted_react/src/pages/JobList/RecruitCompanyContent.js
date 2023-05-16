@@ -20,15 +20,18 @@ const RecruitCompanyContent = ({
   const uncheckBookmark = (id) => dispatch(removeBookmark(id));
   const bookmarkList = useSelector((state) => state.bookmark.bookmarkList);
 
+  function handleOnclick(e) {
+    e.stopPropagation();
+    bookmarkList.includes(key) ? uncheckBookmark(key) : checkBookmark(key);
+  }
+
   return (
     <li className="recruitment_content" onClick={onClick}>
       <div className="content_header">
         <img src={imgSrc} alt="" className="recruitment_image" />
         <button
           className="recruitment_bookmark"
-          onClick={() => {
-            bookmarkList.includes(key) ? uncheckBookmark(key) : checkBookmark(key);
-          }}
+          onClick={handleOnclick}
         >
           <Bookmark_ic />
         </button>
